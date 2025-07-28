@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7月【极速开课】夜校课程表</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #ffd7e9 0%, #d4f0ff 100%);
+            padding: 30px;
+            min-height: 100vh;
+            color: #5a5a5a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            padding: 25px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 25px 0;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b9d;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7a7a7a;
+            font-weight: 300;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            min-width: 900px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: #ff8ab3;
+            color: white;
+            font-weight: 600;
+            padding: 18px 15px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #faf7ff;
+        }
+        
+        tr:hover {
+            background-color: #fff4f9 !important;
+            transition: background-color 0.3s;
+        }
+        
+        .region-header {
+            background-color: #a8e6cf;
+            font-weight: 700;
+            color: #2d6a4f;
+            font-size: 1.1rem;
+        }
+        
+        .course-title {
+            font-weight: 500;
+            color: #4a4a4a;
+        }
+        
+        .popular {
+            color: #ff6b9d;
+            font-weight: 700;
+        }
+        
+        .spots {
+            font-weight: 500;
+        }
+        
+        .spots.low {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+        
+        .spots.medium {
+            color: #ffb86b;
+            font-weight: 700;
+        }
+        
+        .spots.high {
+            color: #4ecdc4;
+            font-weight: 700;
+        }
+        
+        .price {
+            color: #6a6a6a;
+            font-weight: 500;
+        }
+        
+        .duration {
+            color: #7e7e7e;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .location {
+            color: #5a7dff;
+            font-weight: 500;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7a7a7a;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>7月【极速开课】夜校课程表</h1>
+            <div class="subtitle">韩系马卡龙风格 · 精美课程展示</div>
+        </header>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>地区</th>
+                        <th>科目</th>
+                        <th>时间</th>
+                        <th>剩余名额</th>
+                        <th>价格&amp;课时</th>
+                        <th>课程时长</th>
+                        <th>地铁站/地点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="region-header">
+                        <td colspan="7">南山区</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title"><span class="popular">🥇</span> ⑧字</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">高新园站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 小红书运营</td>
+                        <td>周二19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">世界之窗站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 手机摄影&剪辑</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">南油西站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 美妆</td>
+                        <td>周三19:00-21:00</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">留仙洞站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 中yi养生</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">后海站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">粤语</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">后海站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">紫微</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">高新园站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">滑板</td>
+                        <td>周二/周四20:00-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>1.5课时连上</td>
+                        <td class="location">南山书城站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">羽毛球</td>
+                        <td>周五20:00-22:00</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">留仙洞站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">即兴演讲</td>
+                        <td>周二19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">后海站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">剪辑</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">南油站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">古典舞</td>
+                        <td>周二19:00-21:00</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">留仙洞站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">AI应用实践</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">留仙洞站</td>
+                    </tr>
+                    <tr>
+                        <td>南山区</td>
+                        <td class="course-title">羽毛球</td>
+                        <td>周五20:00-22:00</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">留仙洞站</td>
+                    </tr>
+                    
+                    <tr class="region-header">
+                        <td colspan="7">福田区</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 跨境电商亚马逊</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">车公庙站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 中yi养生</td>
+                        <td>周二19:30-21:30</td>
+                        <td class="spots high">5</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">岗厦站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 小红书运营</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">车公庙站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 美妆</td>
+                        <td>周一19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">岗厦站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">非遗手作DIY</td>
+                        <td>周三19:15-21:15</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">莲花西站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">商务英语</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">市民中心站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">短视频运营</td>
+                        <td>周一19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">岗厦北站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">摄影</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">市民中心站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">粤语</td>
+                        <td>周一19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">岗厦北站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">日语</td>
+                        <td>周二19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">会展中心站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">财税</td>
+                        <td>周一19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">车公庙站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">中国舞</td>
+                        <td>周二19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">岗厦站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">AI应用实践</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">岗厦北站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">声乐1班</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">景田站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">声乐2班</td>
+                        <td>周二19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">会展中心站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">服装缝纫（裙子系列）</td>
+                        <td>7.23周三19:30-21:30</td>
+                        <td class="spots low">已成班，可+2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">莲花北站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">交际英语口语</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">车公庙站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">形象设计</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">莲花北站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">花艺</td>
+                        <td>周二19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>3课时连上</td>
+                        <td class="location">莲花北站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">宠物护理与健康管理</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">车公庙站</td>
+                    </tr>
+                    <tr>
+                        <td>福田区</td>
+                        <td class="course-title">占星</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">车公庙站</td>
+                    </tr>
+                    
+                    <tr class="region-header">
+                        <td colspan="7">龙华区</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 小红书运营</td>
+                        <td>周五19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">民治站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 手机摄影&剪辑</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">红山站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">爵士舞</td>
+                        <td>周二20:00-22:00</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">龙华站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">钢琴1班</td>
+                        <td>周四19:15-21:15</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">红山站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">羽毛球</td>
+                        <td>周四20:00-22:00</td>
+                        <td class="spots high">5</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">竹村站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">声乐</td>
+                        <td>周一19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">民治站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">短视频运营</td>
+                        <td>周五19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">民治站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">油画</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">龙华站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">AI应用实践</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">红山站</td>
+                    </tr>
+                    <tr>
+                        <td>龙华区</td>
+                        <td class="course-title">商务英语</td>
+                        <td>周一19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">民治站</td>
+                    </tr>
+                    
+                    <tr class="region-header">
+                        <td colspan="7">宝安区</td>
+                    </tr>
+                    <tr>
+                        <td>宝安区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 美妆</td>
+                        <td>7.30周三19:30-21:30</td>
+                        <td class="spots low">已成班，可+3</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2小时连上</td>
+                        <td class="location">新安站</td>
+                    </tr>
+                    <tr>
+                        <td>宝安区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 小红书运营</td>
+                        <td>7.31周四19:30-21:30</td>
+                        <td class="spots low">已成班，可+2</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2小时连上</td>
+                        <td class="location">宝华站</td>
+                    </tr>
+                    <tr>
+                        <td>宝安区</td>
+                        <td class="course-title"><span class="popular">🥇</span> 手机摄影&剪辑</td>
+                        <td>周五19:30-21:30</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2小时连上</td>
+                        <td class="location">宝华站</td>
+                    </tr>
+                    <tr>
+                        <td>宝安区</td>
+                        <td class="course-title"><span class="popular">🥇</span> ⑧字2班</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2小时连上</td>
+                        <td class="location">新安站</td>
+                    </tr>
+                    <tr>
+                        <td>宝安区</td>
+                        <td class="course-title">摄影（单反）</td>
+                        <td>周五19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2小时连上</td>
+                        <td class="location">上川站</td>
+                    </tr>
+                    <tr>
+                        <td>宝安区</td>
+                        <td class="course-title">财税</td>
+                        <td>周五19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2小时连上</td>
+                        <td class="location">新安站</td>
+                    </tr>
+                    <tr>
+                        <td>宝安区</td>
+                        <td class="course-title">服装设计（缝纫）</td>
+                        <td>7.28周一19:30-21:30</td>
+                        <td class="spots low">已成班，可+2</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2小时连上</td>
+                        <td class="location">宝安站</td>
+                    </tr>
+                    
+                    <tr class="region-header">
+                        <td colspan="7">罗湖区</td>
+                    </tr>
+                    <tr>
+                        <td>罗湖区</td>
+                        <td class="course-title">网球</td>
+                        <td>周一20:00-22:00</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">水贝站</td>
+                    </tr>
+                    <tr>
+                        <td>罗湖区</td>
+                        <td class="course-title">ta罗</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">国贸站</td>
+                    </tr>
+                    
+                    <tr class="region-header">
+                        <td colspan="7">龙岗区</td>
+                    </tr>
+                    <tr>
+                        <td>龙岗区</td>
+                        <td class="course-title"><span class="popular">🥇</span> ⑧字</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">杨美站</td>
+                    </tr>
+                    <tr>
+                        <td>龙岗区</td>
+                        <td class="course-title">声乐1班</td>
+                        <td>周二19:00-21:00</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">杨美站</td>
+                    </tr>
+                    <tr>
+                        <td>龙岗区</td>
+                        <td class="course-title">摄影（相机）</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">坂田站</td>
+                    </tr>
+                    <tr>
+                        <td>龙岗区</td>
+                        <td class="course-title">AI应用实践</td>
+                        <td>周四19:30-21:30</td>
+                        <td class="spots high">4</td>
+                        <td class="price">888 元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">坂田站</td>
+                    </tr>
+                    
+                    <tr class="region-header">
+                        <td colspan="7">光明区</td>
+                    </tr>
+                    <tr>
+                        <td>光明区</td>
+                        <td class="course-title">钢琴</td>
+                        <td>周一20:00-22:00</td>
+                        <td class="spots medium">3</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">凤凰城站</td>
+                    </tr>
+                    <tr>
+                        <td>光明区</td>
+                        <td class="course-title">声乐</td>
+                        <td>周三19:30-21:30</td>
+                        <td class="spots low">2</td>
+                        <td class="price">888元/12课时</td>
+                        <td class="duration">每课时1小时<br>2课时连上</td>
+                        <td class="location">凤凰城站</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            注：🥇标记为热门课程 | 剩余名额：<span style="color:#ff6b6b">红色</span>表示名额紧张，<span style="color:#ffb86b">橙色</span>表示中等，<span style="color:#4ecdc4">绿色</span>表示充足
+        </div>
+    </div>
+</body>
+</html>
